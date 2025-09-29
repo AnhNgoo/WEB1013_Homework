@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ví dụ CSS Position</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      height: 2000px; /* tạo trang dài để test fixed, sticky */
+    }
+
+    .box {
+      width: 150px;
+      height: 100px;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      margin: 10px;
+    }
+
+    .static {
+      background: gray;
+      position: static; /* mặc định */
+    }
+
+    .relative {
+      background: blue;
+      position: relative;
+      top: 20px;
+      left: 30px;
+    }
+
+    .absolute {
+      background: green;
+      position: absolute;
+      top: 50px;
+      right: 50px;
+    }
+
+    .fixed {
+      background: red;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .sticky {
+      background: orange;
+      position: sticky;
+      top:0; /* dính trên cùng khi cuộn */
+    }
+
+    .container {
+      position: relative; /* để absolute dựa theo container */
+      height: 200px;
+      border: 2px dashed #444;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Ví dụ về các kiểu định vị</h2>
+
+  <div class="box static">Static</div>
+  <div class="box relative">Relative</div>
+
+  <div class="container">
+    <div class="box absolute">Absolute</div>
+  </div>
+
+  <div class="box sticky">Sticky (cuộn thử)</div>
+
+  <div class="box fixed">Fixed (góc màn hình)</div>
+</body>
+</html>

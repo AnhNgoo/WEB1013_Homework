@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phản hồi</title>
+  </head>
+  <body>
+    <header>
+      <h1>Phản hồi từ khách hàng</h1>
+      <nav>
+        <ul>
+          <li><a href="Home.html">Trang chủ</a></li>
+          <li><a href="About.html">Giới thiệu</a></li>
+          <li><a href="Contact.html">Liên hệ</a></li>
+          <li><a href="FAQ.html">Câu hỏi thường gặp</a></li>
+          <li><a href="Feedback.html">Phản hồi</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Gửi phản hồi của bạn</h2>
+        <form>
+          <div>
+            <label for="customer-name">Họ tên:</label><br />
+            <input
+              type="text"
+              id="customer-name"
+              name="customer-name"
+              required
+            />
+          </div>
+          <div>
+            <label for="customer-email">Email:</label><br />
+            <input
+              type="email"
+              id="customer-email"
+              name="customer-email"
+              required
+            />
+          </div>
+          <div>
+            <label for="rating">Đánh giá dịch vụ:</label><br />
+            <select id="rating" name="rating">
+              <option value="5">Rất hài lòng (5 sao)</option>
+              <option value="4">Hài lòng (4 sao)</option>
+              <option value="3">Bình thường (3 sao)</option>
+              <option value="2">Không hài lòng (2 sao)</option>
+              <option value="1">Rất không hài lòng (1 sao)</option>
+            </select>
+          </div>
+          <div>
+            <label for="feedback-text">Nội dung phản hồi:</label><br />
+            <textarea
+              id="feedback-text"
+              name="feedback-text"
+              rows="6"
+              cols="50"
+              placeholder="Hãy chia sẻ ý kiến của bạn về dịch vụ..."
+            ></textarea>
+          </div>
+          <div>
+            <input type="checkbox" id="recommend" name="recommend" />
+            <label for="recommend"
+              >Tôi sẽ giới thiệu dịch vụ này cho bạn bè</label
+            >
+          </div>
+          <div>
+            <button type="submit">Gửi phản hồi</button>
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <h2>Phản hồi từ khách hàng khác</h2>
+        <blockquote>
+          <p>"Dịch vụ rất tốt, nhân viên nhiệt tình và chuyên nghiệp."</p>
+          <cite>- Nguyễn Văn A</cite>
+        </blockquote>
+
+        <blockquote>
+          <p>"Tôi rất hài lòng với chất lượng dịch vụ. Sẽ tiếp tục sử dụng."</p>
+          <cite>- Trần Thị B</cite>
+        </blockquote>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="Home.html">Quay lại trang chủ</a></p>
+    </footer>
+  </body>
+</html>
