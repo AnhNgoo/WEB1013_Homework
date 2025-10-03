@@ -1,0 +1,510 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* HEADER giống index */
+.main-header {
+    background: #004d40;
+    color: white;
+}
+
+/* Top bar với logo */
+.top-bar {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-area img {
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+}
+
+.school-identity h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.school-identity p {
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+/* Menu chính */
+.main-nav {
+    background: #003d33;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background: #00897b;
+}
+
+/* Submenu đơn giản */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #017360;
+    min-width: 200px;
+    list-style: none;
+    z-index: 2;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    padding: 10px 15px;
+    border-bottom: 1px solid #015c52;
+}
+
+.submenu a:hover {
+    background: #eee;
+    color: black;
+}
+
+/* Hero Section đơn giản */
+.hero {
+    background: white;
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #00897b;
+}
+
+.hero h1 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #004d40;
+}
+
+.hero p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Form Section */
+.form-section {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.form-container {
+    flex: 2;
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 1.8em;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1em;
+}
+
+/* Form Styling giống index */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #444;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-bottom: 6px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.char-count {
+    text-align: right;
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Rating đơn giản */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.rating label:hover,
+.rating input:checked ~ label {
+    color: #ffd700;
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Buttons giống index */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary {
+    background: #ccc;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #bbb;
+}
+
+/* Sidebar đơn giản */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info,
+.feedback-stats,
+.recent-feedback {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-info h3,
+.feedback-stats h3,
+.recent-feedback h3 {
+    color: #004d40;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-bottom: 2px solid #00897b;
+    padding-bottom: 5px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.contact-item i {
+    color: #004d40;
+    width: 18px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-item .number {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #004d40;
+}
+
+.stat-item .label {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.feedback-item {
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    border-left: 3px solid #00897b;
+}
+
+.feedback-item p {
+    font-style: italic;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.feedback-item span {
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* FOOTER giống index */
+.main-footer {
+    background: #004d40;
+    color: white;
+    padding-top: 30px;
+}
+
+.footer-grid {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    color: white;
+    font-size: 1.1em;
+}
+
+.footer-col p {
+    margin-bottom: 8px;
+    color: #ccc;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: white;
+}
+
+/* Contact detail styling đặc biệt */
+.contact-detail h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.contact-detail p {
+    color: white;
+    margin-bottom: 12px;
+}
+
+.copyright-bar {
+    background: #003d33;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-section {
+        flex-direction: column;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .hero h1 {
+        font-size: 1.8em;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-area {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    
+    .logo-area img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        height: 60px;
+    }
+    
+    .school-identity h1 {
+        font-size: 1.5em;
+    }
+    
+    .footer-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .footer-col {
+        margin-bottom: 20px;
+    }
+    
+    .contact-detail h4 {
+        font-size: 1.1em;
+    }
+    
+    .footer-col h4 {
+        font-size: 1em;
+    }
+    
+    .footer-col p,
+    .footer-col a {
+        font-size: 0.85em;
+    }
+    
+    .copyright-bar {
+        padding: 12px 0;
+        font-size: 0.8em;
+    }
+    
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}

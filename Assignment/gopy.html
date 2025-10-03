@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góp ý kiến - THPT Lương Thế Vinh</title>
+    <link rel="stylesheet" href="css/gopy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header giống index -->
+    <header class="main-header">
+        <div class="top-bar container">
+            <div class="logo-area">
+                <img src="images/logo.jpg" alt="Logo Trường THPT Lương Thế Vinh">
+                <div class="school-identity">
+                    <h1>TRƯỜNG THPT LƯƠNG THẾ VINH</h1>
+                    <p>Thị xã Ba Đồn — Tỉnh Quảng Trị</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="menu container">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gopy.html" style="background: #00897b;">Góp ý kiến</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>💌 Góp ý kiến về nhà trường</h1>
+                <p>Ý kiến đóng góp của bạn là động lực để chúng tôi ngày càng hoàn thiện hơn</p>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>📝 Gửi ý kiến đóng góp</h2>
+                    <p>Mọi ý kiến của bạn đều được trân trọng và xem xét kỹ lưỡng</p>
+                </div>
+
+                <form class="feedback-form" action="#" method="POST">
+                    <!-- Thông tin cá nhân -->
+                    <div class="form-group">
+                        <label for="fullname">👤 Họ và tên *</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">📧 Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">📱 Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <!-- Vai trò -->
+                    <div class="form-group">
+                        <label for="role">🏷️ Bạn là *</label>
+                        <select id="role" name="role" required>
+                            <option value="">-- Chọn vai trò --</option>
+                            <option value="hoc-sinh">Học sinh</option>
+                            <option value="phu-huynh">Phụ huynh</option>
+                            <option value="giao-vien">Giáo viên</option>
+                            <option value="cuu-hoc-sinh">Cựu học sinh</option>
+                            <option value="khac">Khác</option>
+                        </select>
+                    </div>
+
+                    <!-- Loại góp ý -->
+                    <div class="form-group">
+                        <label for="category">📂 Loại góp ý *</label>
+                        <select id="category" name="category" required>
+                            <option value="">-- Chọn loại góp ý --</option>
+                            <option value="chuong-trinh-hoc">Chương trình học</option>
+                            <option value="giao-vien">Đội ngũ giáo viên</option>
+                            <option value="co-so-vat-chat">Cơ sở vật chất</option>
+                            <option value="hoat-dong-ngoai-khoa">Hoạt động ngoại khóa</option>
+                            <option value="dich-vu-ho-tro">Dịch vụ hỗ trợ</option>
+                            <option value="khac">Khác</option>
+                        </select>
+                    </div>
+
+                    <!-- Tiêu đề -->
+                    <div class="form-group">
+                        <label for="title">📌 Tiêu đề góp ý *</label>
+                        <input type="text" id="title" name="title" placeholder="Nhập tiêu đề ngắn gọn" required>
+                    </div>
+
+                    <!-- Nội dung -->
+                    <div class="form-group">
+                        <label for="message">💭 Nội dung góp ý *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Chia sẻ ý kiến, đề xuất của bạn..." required></textarea>
+                        <div class="char-count">
+                            <span id="charCount">0</span>/1000 ký tự
+                        </div>
+                    </div>
+
+                    <!-- Đánh giá -->
+                    <div class="form-group">
+                        <label>⭐ Đánh giá chung về trường</label>
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5">⭐</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">⭐</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">⭐</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">⭐</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">⭐</label>
+                        </div>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="anonymous" name="anonymous">
+                            <label for="anonymous">🔒 Gửi ý kiến ẩn danh</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">📬 Đăng ký nhận thông tin từ nhà trường</label>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-secondary">🔄 Nhập lại</button>
+                        <button type="submit" class="btn btn-primary">📤 Gửi góp ý</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="contact-info">
+                    <h3>📞 Liên hệ trực tiếp</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0912 069 722</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>thpt_luongthevinh@quangbinh.edu.vn</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>16 Hùng Vương, TX. Ba Đồn, Quảng Trị</span>
+                    </div>
+                </div>
+
+                <div class="feedback-stats">
+                    <h3>📊 Thống kê góp ý</h3>
+                    <div class="stat-item">
+                        <span class="number">1,234</span>
+                        <span class="label">Góp ý đã nhận</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">95%</span>
+                        <span class="label">Đã được xử lý</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">4.8/5</span>
+                        <span class="label">Đánh giá trung bình</span>
+                    </div>
+                </div>
+
+                <div class="recent-feedback">
+                    <h3>💬 Góp ý gần đây</h3>
+                    <div class="feedback-item">
+                        <p>"Cảm ơn thầy cô đã quan tâm đến học sinh"</p>
+                        <span>- Phụ huynh lớp 11A</span>
+                    </div>
+                    <div class="feedback-item">
+                        <p>"Mong trường tổ chức thêm hoạt động ngoại khóa"</p>
+                        <span>- Học sinh lớp 12B</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer giống index -->
+    <footer class="main-footer">
+        <div class="footer-grid container">
+            <div class="footer-col contact-detail">
+                <h4>Trường THPT Lương Thế Vinh</h4>
+                <p>📍 Địa chỉ: 16 Hùng Vương, TX. Ba Đồn, Quảng Trị</p>
+                <p>📞 Điện thoại: 0912 069 722</p>
+                <p>✉ Email: thpt_luongthevinh@quangbinh.edu.vn</p>
+            </div>
+            <div class="footer-col">
+                <h4>Giới thiệu</h4>
+                <ul>
+                    <li><a href="#">Lịch sử hình thành</a></li>
+                    <li><a href="#">Cơ cấu tổ chức</a></li>
+                    <li><a href="#">Thành tích</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tin tức & Tuyển sinh</h4>
+                <ul>
+                    <li><a href="#">Tin hoạt động</a></li>
+                    <li><a href="#">Thông báo</a></li>
+                    <li><a href="#">Thông tin tuyển sinh</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Thư viện</h4>
+                <ul>
+                    <li><a href="#">Tài liệu học tập</a></li>
+                    <li><a href="#">Hình ảnh</a></li>
+                    <li><a href="#">Video</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            <p class="container">© 2025 Trường THPT Lương Thế Vinh - Quảng Trị. Design by AGDev</p>
+        </div>
+    </footer>
+
+    <script src="js/gopy.js"></script>
+</body>
+</html>
