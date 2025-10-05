@@ -1,0 +1,84 @@
+body {
+  background: #f5f6fa;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 20px;
+}
+
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col-25 {
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.prod {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prod:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.prod .name {
+  font-variant: small-caps;
+  color: orangered;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.prod .image {
+  max-width: 98%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.prod .price {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-family: Impact, sans-serif;
+  font-size: 22px;
+  color: orange;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.prod .icons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.prod .icons img {
+  width: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.prod .icons img:hover {
+  transform: scale(1.2);
+}
+
+.prod .new-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+}

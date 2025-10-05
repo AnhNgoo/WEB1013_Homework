@@ -1,0 +1,58 @@
+.menu > ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  border-radius: 3px;
+  background-color: orangered;
+  text-align: center;
+}
+.menu > ul > li {
+  display: inline-block;
+  position: relative;
+}
+
+.menu > ul > li > a {
+ display: block;
+ text-decoration: none;
+ font-variant: small-caps;
+ font-size: larger;
+ color: white;
+ padding: 0px 10px;
+ line-height: 40px;
+}
+
+.menu > ul > li > a:hover {
+  background-color: #ff7f27;
+  font-weight: bold;
+}
+
+.menu ul ul {
+  position: absolute;
+  display: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu ul ul a {
+  display: block;
+  text-decoration: none;
+  font-variant: small-caps;
+  font-size: larger;
+  color: white;
+  padding: 0px 10px;
+  line-height: 40px;
+}
+
+.menu ul li:hover > ul {
+  display: block;
+  background-color: orangered;
+  text-align: left;
+  text-decoration: none;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.menu ul li ul li:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
