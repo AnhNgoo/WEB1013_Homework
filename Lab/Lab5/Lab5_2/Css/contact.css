@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* ==== Nền trang ==== */
@@ -11,31 +11,40 @@ body {
   background: linear-gradient(135deg, #f6d365, #fda085);
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-/* ==== Khung login ==== */
-.login-container {
+/* ==== Khung form ==== */
+.contact-container {
   background-color: #fff;
   padding: 40px 45px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   width: 100%;
-  max-width: 380px;
+  max-width: 600px;
   animation: fadeIn 0.8s ease;
 }
 
 /* ==== Tiêu đề ==== */
-.login-container h2 {
+.contact-container h2 {
   text-align: center;
   color: #e67e22;
-  margin-bottom: 30px;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
-.login-container h2 i {
+.contact-container h2 i {
   margin-right: 8px;
+}
+
+.intro-text {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* ==== Nhóm form ==== */
@@ -55,27 +64,30 @@ body {
   margin-right: 6px;
 }
 
-/* ==== Input ==== */
-.form-group input {
+/* ==== Input & Textarea ==== */
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: #fafafa;
+  background-color: #fafafa;
+  resize: none;
 }
 
-/* ==== Hiệu ứng Focus (tiêu điểm) ==== */
-.form-group input:focus {
+/* ==== Hiệu ứng focus ==== */
+.form-group input:focus,
+.form-group textarea:focus {
   border-color: #e67e22;
   box-shadow: 0 0 6px rgba(230,126,34,0.4);
-  background: #fff;
+  background-color: #fff;
   outline: none;
 }
 
-/* ==== Nút đăng nhập ==== */
-.btn-login {
+/* ==== Nút gửi ==== */
+.btn-submit {
   width: 100%;
   padding: 12px;
   background-color: #e67e22;
@@ -85,37 +97,20 @@ body {
   font-size: 1.1rem;
   cursor: pointer;
   transition: 0.3s ease;
+  text-transform: uppercase;
 }
 
-.btn-login:hover {
+.btn-submit:hover {
   background-color: #c0392b;
   transform: scale(1.03);
   font-weight: bold;
 }
 
-.btn-login i {
+.btn-submit i {
   margin-right: 6px;
 }
 
-/* ==== Liên kết Quên mật khẩu ==== */
-.forgot-password {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.forgot-password a {
-  text-decoration: none;
-  color: #555;
-  font-size: 0.9rem;
-  transition: 0.3s;
-}
-
-.forgot-password a:hover {
-  color: #e67e22;
-  text-decoration: underline;
-}
-
-/* ==== Hiệu ứng xuất hiện ==== */
+/* ==== Animation ==== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -129,10 +124,10 @@ body {
 
 /* ==== Responsive ==== */
 @media (max-width: 480px) {
-  .login-container {
+  .contact-container {
     padding: 25px 20px;
   }
-  .login-container h2 {
+  .contact-container h2 {
     font-size: 1.2rem;
   }
 }

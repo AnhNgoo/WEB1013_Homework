@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - THPT Lương Thế Vinh</title>
+    <link rel="stylesheet" href="css/lienhe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header giống index -->
+    <header class="main-header">
+        <div class="top-bar container">
+            <div class="logo-area">
+                <img src="images/logo.jpg" alt="Logo Trường THPT Lương Thế Vinh">
+                <div class="school-identity">
+                    <h1>TRƯỜNG THPT LƯƠNG THẾ VINH</h1>
+                    <p>Thị xã Ba Đồn — Tỉnh Quảng Trị</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="menu container">
+                <li><a href="index.html">Trang chủ</a></li>
+                
+                <li class="has-submenu">
+                    <a href="#">Giới thiệu ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">Lịch sử hình thành</a></li>
+                        <li><a href="#">Tầm nhìn - Sứ mệnh</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Thành tích</a></li>
+                    </ul>
+                </li>
+                
+                <li class="has-submenu">
+                    <a href="#">Tin tức & Sự kiện ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">Tin hoạt động</a></li>
+                        <li><a href="#">Nhân vật - sự kiện</a></li>
+                        <li><a href="#">Thông báo</a></li>
+                    </ul>
+                </li>
+                
+                <li class="has-submenu">
+                    <a href="#">Tuyển Sinh ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">Thông tin tuyển sinh</a></li>
+                        <li><a href="#">Lớp bồi dưỡng</a></li>
+                    </ul>
+                </li>
+                
+                <li class="has-submenu">
+                    <a href="#">Thư viện ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">Tài liệu học tập</a></li>
+                        <li><a href="#">Hình ảnh</a></li>
+                        <li><a href="#">Video</a></li>
+                    </ul>
+                </li>
+                
+                <li class="has-submenu">
+                    <a href="#" style="background: #00897b;">Liên hệ & Góp ý ▾</a>
+                    <ul class="submenu">
+                        <li><a href="lienhe.html">Liên hệ</a></li>
+                        <li><a href="gopy.html">Góp ý</a></li>
+                        <li><a href="#">Hỏi & Đáp</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>📞 Liên hệ với nhà trường</h1>
+                <p>Nhà trường luôn sẵn sàng lắng nghe ý kiến đóng góp quý báu từ quý phụ huynh và học sinh</p>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>✉️ Gửi thông tin liên hệ</h2>
+                    <p>Vui lòng điền đầy đủ thông tin bên dưới, chúng tôi sẽ phản hồi sớm nhất có thể</p>
+                </div>
+
+                <form class="contact-form" id="contactForm" action="#" method="POST">
+                    <!-- Thông tin cá nhân -->
+                    <div class="form-group">
+                        <label for="fullname">👤 Họ và tên *</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">📧 Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">📱 Số điện thoại *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <!-- Vai trò -->
+                    <div class="form-group">
+                        <label for="role">🏷️ Bạn là *</label>
+                        <select id="role" name="role" required>
+                            <option value="">-- Chọn vai trò --</option>
+                            <option value="hoc-sinh">Học sinh</option>
+                            <option value="phu-huynh">Phụ huynh</option>
+                            <option value="giao-vien">Giáo viên</option>
+                            <option value="cuu-hoc-sinh">Cựu học sinh</option>
+                            <option value="doanh-nghiep">Doanh nghiệp</option>
+                            <option value="khac">Khác</option>
+                        </select>
+                    </div>
+
+                    <!-- Chủ đề -->
+                    <div class="form-group">
+                        <label for="subject">📌 Chủ đề liên hệ *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Chọn chủ đề --</option>
+                            <option value="tuyen-sinh">Tuyển sinh</option>
+                            <option value="chuong-trinh-hoc">Chương trình học</option>
+                            <option value="hoat-dong">Hoạt động của trường</option>
+                            <option value="hop-tac">Hợp tác - Liên kết</option>
+                            <option value="khieu-nai">Khiếu nại - Phản ánh</option>
+                            <option value="khac">Khác</option>
+                        </select>
+                    </div>
+
+                    <!-- Tiêu đề -->
+                    <div class="form-group">
+                        <label for="title">📝 Tiêu đề *</label>
+                        <input type="text" id="title" name="title" placeholder="Nhập tiêu đề ngắn gọn" required>
+                    </div>
+
+                    <!-- Nội dung -->
+                    <div class="form-group">
+                        <label for="message">💭 Nội dung tin nhắn *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Nhập nội dung chi tiết..." required></textarea>
+                        <div class="char-count">
+                            <span id="charCount">0</span>/1000 ký tự
+                        </div>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="copy" name="copy">
+                            <label for="copy">📬 Gửi bản sao về email của tôi</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">📧 Đăng ký nhận thông tin từ nhà trường</label>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-secondary">🔄 Nhập lại</button>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">📤 Gửi tin nhắn</span>
+                            <span class="btn-loading">⏳ Đang gửi...</span>
+                        </button>
+                    </div>
+
+                    <p id="formResponse" class="form-response"></p>
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="contact-info">
+                    <h3>📍 Thông tin liên hệ</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>16 Hùng Vương, TX. Ba Đồn, Quảng Trị</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0912 069 722</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>thpt_luongthevinh@quangbinh.edu.vn</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>www.thptluongthevinh.edu.vn</span>
+                    </div>
+                </div>
+
+                <div class="office-hours">
+                    <h3>🕒 Giờ làm việc</h3>
+                    <div class="time-item">
+                        <span class="day">Thứ 2 - Thứ 6:</span>
+                        <span class="time">7:00 - 17:00</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="day">Thứ 7:</span>
+                        <span class="time">7:00 - 11:30</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="day">Chủ nhật:</span>
+                        <span class="time">Nghỉ</span>
+                    </div>
+                </div>
+
+                <div class="quick-contact">
+                    <h3>📞 Liên hệ nhanh</h3>
+                    <div class="contact-card">
+                        <h4>📚 Phòng Đào tạo</h4>
+                        <p>📞 Nội bộ: 101</p>
+                        <p>📧 daotao@thptltv.edu.vn</p>
+                    </div>
+                    <div class="contact-card">
+                        <h4>👥 Phòng Học sinh</h4>
+                        <p>📞 Nội bộ: 102</p>
+                        <p>📧 hocsinh@thptltv.edu.vn</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer giống index -->
+    <footer class="main-footer">
+        <div class="footer-grid container">
+            <div class="footer-col contact-detail">
+                <h4>Trường THPT Lương Thế Vinh</h4>
+                <p>📍 Địa chỉ: 16 Hùng Vương, TX. Ba Đồn, Quảng Trị</p>
+                <p>📞 Điện thoại: 0912 069 722</p>
+                <p>✉ Email: thpt_luongthevinh@quangbinh.edu.vn</p>
+            </div>
+            <div class="footer-col">
+                <h4>Giới thiệu</h4>
+                <ul>
+                    <li><a href="#">Lịch sử hình thành</a></li>
+                    <li><a href="#">Cơ cấu tổ chức</a></li>
+                    <li><a href="#">Thành tích</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tin tức & Tuyển sinh</h4>
+                <ul>
+                    <li><a href="#">Tin hoạt động</a></li>
+                    <li><a href="#">Thông báo</a></li>
+                    <li><a href="#">Thông tin tuyển sinh</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Thư viện</h4>
+                <ul>
+                    <li><a href="#">Tài liệu học tập</a></li>
+                    <li><a href="#">Hình ảnh</a></li>
+                    <li><a href="#">Video</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            <p class="container">© 2025 Trường THPT Lương Thế Vinh - Quảng Trị. Design by AGDev</p>
+        </div>
+    </footer>
+
+    <script src="js/lienhe.js"></script>
+</body>
+</html>
