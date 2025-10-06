@@ -556,3 +556,132 @@ textarea {
     width: 70px;
   }
 }
+
+/* === FORM UI UPGRADE === */
+
+/* Cải thiện layout form */
+.form-container {
+  flex: 2;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px 35px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* Tiêu đề form */
+.form-header h2 {
+  font-size: 1.9em;
+  color: #004d40;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 1.05em;
+}
+
+/* Nhóm form rõ ràng hơn */
+.form-group {
+  margin-bottom: 22px;
+}
+
+/* Ô input đẹp và thân thiện hơn */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #009688;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(0,150,136,0.2);
+}
+
+/* Placeholder nhạt hơn */
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Nút hành động */
+.btn {
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00897b, #004d40);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #00bfa5, #00695c);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,150,136,0.3);
+}
+
+.btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #ccc;
+}
+
+/* Phản hồi người dùng */
+.form-response {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95em;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: none;
+}
+
+.form-response.success {
+  display: block;
+  background: #e8f5e9;
+  border: 1px solid #81c784;
+  color: #2e7d32;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .form-section {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .form-container {
+    padding: 25px 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
