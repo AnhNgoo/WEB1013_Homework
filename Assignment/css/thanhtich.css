@@ -251,6 +251,8 @@
 .research::before { background: linear-gradient(90deg, #9c27b0, #ab47bc); }
 .graduation::before { background: linear-gradient(90deg, #4caf50, #66bb6a); }
 .university::before { background: linear-gradient(90deg, #ff9800, #ffb74d); }
+.excellence::before { background: linear-gradient(90deg, #e91e63, #f06292); }
+.competition::before { background: linear-gradient(90deg, #795548, #8d6e63); }
 
 .achievement-item:hover {
     transform: translateY(-8px);
@@ -327,6 +329,23 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    transition: all 1s ease-in-out;
+}
+
+.circle-progress[data-percentage="95"] {
+    background: conic-gradient(#4caf50 0deg, #4caf50 var(--progress, 0deg), #e0e0e0 var(--progress, 0deg));
+}
+
+.circle-progress[data-percentage="85"] {
+    background: conic-gradient(#2196f3 0deg, #2196f3 var(--progress, 0deg), #e0e0e0 var(--progress, 0deg));
+}
+
+.circle-progress[data-percentage="78"] {
+    background: conic-gradient(#ff9800 0deg, #ff9800 var(--progress, 0deg), #e0e0e0 var(--progress, 0deg));
+}
+
+.circle-progress[data-percentage="100"] {
+    background: conic-gradient(#e91e63 0deg, #e91e63 var(--progress, 0deg), #e0e0e0 var(--progress, 0deg));
 }
 
 .inner-circle {
