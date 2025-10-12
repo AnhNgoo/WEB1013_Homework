@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 3 - Hiển thị Flash</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>Bài 3 - Hiển thị Flash bằng &lt;embed&gt; và &lt;object&gt;</h1>
+
+  <div class="flash-container">
+
+    <!-- Flash thứ nhất: sử dụng EMBED -->
+    <div class="flash-box">
+      <h3>Flash bằng thẻ &lt;embed&gt;</h3>
+      <embed src="media/flash1.swf"
+             width="400"
+             height="300"
+             type="application/x-shockwave-flash"
+             quality="high"
+             pluginspage="http://www.adobe.com/go/getflashplayer">
+      </embed>
+    </div>
+
+    <!-- Flash thứ hai: sử dụng OBJECT -->
+    <div class="flash-box">
+      <h3>Flash bằng thẻ &lt;object&gt;</h3>
+      <object width="400"
+              height="300"
+              data="media/flash2.swf"
+              type="application/x-shockwave-flash">
+        <param name="movie" value="flash2.swf">
+        <param name="quality" value="high">
+        <param name="play" value="true">
+        <param name="loop" value="true">
+        <param name="wmode" value="transparent">
+        Trình duyệt của bạn không hỗ trợ Flash.
+      </object>
+    </div>
+
+  </div>
+
+  <p class="note">
+    🔗 Nguồn flash có thể tải từ: 
+    <a href="http://www.leconcombre.com/board/dl/us/downloadflas0us.html" target="_blank">
+      leconcombre.com
+    </a>
+  </p>
+</body>
+</html>

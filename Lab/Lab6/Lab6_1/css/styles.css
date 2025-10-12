@@ -1,0 +1,81 @@
+/* ===== Cấu hình chung ===== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+  text-align: center;
+  padding: 40px;
+  color: #333;
+}
+
+h1 {
+  color: #0d6efd;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+/* ===== Bảng U19 ===== */
+.table-u19 {
+  width: 80%;
+  margin: 0 auto 50px;
+  border-collapse: collapse;
+  font-size: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-u19 th {
+  background-color: #6bbf44;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #89c776;
+}
+
+.table-u19 td {
+  border: 1px solid #89c776;
+  padding: 10px;
+}
+
+.table-u19 .title-row td {
+  background-color: #e9f9e4;
+  font-weight: bold;
+}
+
+.table-u19 .team-vn {
+  color: red;
+  font-weight: bold;
+}
+
+.table-u19 .live {
+  color: red;
+  font-style: italic;
+}
+
+/* ===== Bảng Ngoại tệ ===== */
+.table-currency {
+  width: 85%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.table-currency th {
+  background-color: #005cbf;
+  color: #fff;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+}
+
+.table-currency td {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.table-currency tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-currency tr:hover {
+  background-color: #e9f1ff;
+  transition: 0.2s;
+}

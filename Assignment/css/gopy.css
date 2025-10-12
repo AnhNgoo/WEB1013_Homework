@@ -6,10 +6,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: #333;
-    background: #f9f9f9;
+    line-height: 1.6;
+    background: #f8f9fa;
 }
 
 .container {
@@ -18,42 +18,48 @@ body {
     padding: 0 15px;
 }
 
-/* HEADER giống index */
+/* HEADER */
 .main-header {
-    background: #004d40;
+    background: linear-gradient(135deg, #00695c 0%, #004d40 100%);
     color: white;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    top: 0;
+    z-index: 100;
+    animation: fadeInDown 0.8s ease-out;
 }
 
-/* Top bar với logo - Căn giữa */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .top-bar {
-    padding: 30px 0;
+    padding: 25px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #004d40 0%, #00695c 100%);
-    position: relative;
+    background: transparent;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 25px;
-    text-align: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.logo-area:hover {
+    transform: scale(1.03);
 }
 
 .logo-area img {
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
     background: white;
-    padding: 8px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-}
-
-.logo-area img:hover {
-    transform: scale(1.05);
+    padding: 6px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 .school-identity {
@@ -61,35 +67,34 @@ body {
 }
 
 .school-identity h1 {
-    font-size: 2.5em;
-    margin-bottom: 8px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    letter-spacing: 1px;
+    font-size: 2.2em;
     font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
 }
 
 .school-identity p {
-    font-size: 1.3em;
     color: #b2dfdb;
+    font-size: 1.1em;
+    margin-top: 5px;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-/* Xóa empty-space vì không cần thiết */
-.empty-space {
-    display: none;
-}
-
-/* Menu chính */
+/* NAVIGATION */
 .main-nav {
-    background: #003d33;
+    background: rgba(0, 61, 51, 0.95);
+    backdrop-filter: blur(8px);
 }
 
 .menu {
     display: flex;
     list-style: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu li {
@@ -98,59 +103,195 @@ body {
 
 .menu a {
     display: block;
-    padding: 15px 20px;
+    padding: 15px 25px;
     color: white;
     text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .menu a:hover {
-    background: #00897b;
+    background: linear-gradient(135deg, #00bfa5, #00796b);
+    color: #fff;
+    border-radius: 5px;
+    transform: translateY(-2px);
 }
 
-/* Submenu đơn giản */
 .submenu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background: #017360;
+    background: #00695c;
     min-width: 200px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     list-style: none;
     z-index: 2;
 }
 
 .has-submenu:hover .submenu {
     display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .submenu a {
     padding: 10px 15px;
-    border-bottom: 1px solid #015c52;
+    border-bottom: 1px solid #004d40;
 }
 
 .submenu a:hover {
-    background: #eee;
-    color: black;
+    background: #004d40;
+    color: white;
+    border-radius: 0;
+    transform: none;
 }
 
-/* Hero Section đơn giản */
-.hero {
-    background: white;
+/* Page Header */
+.page-header {
+    position: relative;
+    background: linear-gradient(135deg, #00695c, #004d40);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 20px;
+    margin: 30px 0 50px 0;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,105,92,0.3);
+    animation: slideInDown 0.8s ease-out;
+}
+
+.page-header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate360 20s linear infinite;
+}
+
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    padding: 40px 0;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #00897b;
 }
 
-.hero h1 {
-    font-size: 2.2em;
+.page-title {
+    font-size: 3em;
+    font-weight: 700;
     margin-bottom: 15px;
-    color: #004d40;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-.hero p {
-    font-size: 1.1em;
+.title-icon {
+    font-size: 1.2em;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.page-subtitle {
+    font-size: 1.3em;
+    color: #b2dfdb;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.header-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00bfa5, #4caf50, #00bfa5);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin: 30px 0 40px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    font-size: 0.9em;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.breadcrumb a {
+    color: #00897b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #004d40;
+    text-shadow: 0 0 5px rgba(0,137,123,0.3);
+}
+
+.breadcrumb .separator {
+    margin: 0 10px;
     color: #666;
+    font-weight: bold;
+}
+
+.breadcrumb .current {
+    color: #004d40;
+    font-weight: 600;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section - Cập nhật để không bị trùng lặp */
+.hero {
+    display: none; /* Ẩn hero cũ vì đã có page-header mới */
 }
 
 /* Form Section */
@@ -162,10 +303,16 @@ body {
 
 .form-container {
     flex: 2;
-    background: white;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 35px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
 .form-header {
@@ -174,19 +321,19 @@ body {
 }
 
 .form-header h2 {
-    font-size: 1.8em;
+    font-size: 1.9em;
     color: #004d40;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .form-header p {
     color: #666;
-    font-size: 1em;
+    font-size: 1.05em;
 }
 
-/* Form Styling giống index */
+/* Form Styling */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .form-row {
@@ -209,19 +356,29 @@ input,
 select,
 textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 12px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
     box-sizing: border-box;
     margin-bottom: 6px;
+    transition: all 0.3s ease;
+    background: #fafafa;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #009688;
+    background: #ffffff;
+    box-shadow: 0 0 6px rgba(0,150,136,0.2);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
 }
 
 textarea {
@@ -236,7 +393,7 @@ textarea {
     margin-top: 5px;
 }
 
-/* Rating đơn giản */
+/* Rating */
 .rating {
     display: flex;
     flex-direction: row-reverse;
@@ -278,7 +435,7 @@ textarea {
     font-weight: normal;
 }
 
-/* Buttons giống index */
+/* Buttons */
 .form-actions {
     display: flex;
     gap: 15px;
@@ -287,34 +444,53 @@ textarea {
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .btn-primary {
-    background: #007bff;
+    background: linear-gradient(135deg, #00897b, #004d40);
     color: white;
 }
 
 .btn-primary:hover {
-    background: #0056b3;
+    background: linear-gradient(135deg, #00bfa5, #00695c);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,150,136,0.3);
 }
 
 .btn-secondary {
-    background: #ccc;
+    background: #e0e0e0;
     color: #333;
 }
 
 .btn-secondary:hover {
-    background: #bbb;
+    background: #ccc;
 }
 
-/* Sidebar đơn giản */
+/* Form Response */
+.form-response {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95em;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: none;
+}
+
+.form-response.success {
+    display: block;
+    background: #e8f5e9;
+    border: 1px solid #81c784;
+    color: #2e7d32;
+}
+
+/* Sidebar */
 .sidebar {
     flex: 1;
     display: flex;
@@ -394,32 +570,59 @@ textarea {
     color: #666;
 }
 
-/* FOOTER giống index */
+/* FOOTER */
 .main-footer {
-    background: #004d40;
+    background: linear-gradient(135deg, #004d40, #00332c);
     color: white;
-    padding-top: 30px;
+    padding: 50px 0 20px;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 70%);
+    animation: moveBg 10s linear infinite;
+}
+
+@keyframes moveBg {
+    from { transform: translateX(0); }
+    to { transform: translateX(50%); }
 }
 
 .footer-grid {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
     padding-bottom: 20px;
 }
 
 .footer-col {
     flex: 1;
+    min-width: 250px;
 }
 
 .footer-col h4 {
     margin-bottom: 15px;
-    color: white;
     font-size: 1.1em;
+    border-bottom: 2px solid #00bfa5;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: white;
 }
 
 .footer-col p {
     margin-bottom: 8px;
-    color: #ccc;
+    color: #b2dfdb;
     font-size: 0.9em;
     line-height: 1.5;
 }
@@ -433,14 +636,15 @@ textarea {
 }
 
 .footer-col a {
-    color: #ccc;
-    text-decoration: none;
+    color: #b2dfdb;
     font-size: 0.9em;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .footer-col a:hover {
-    color: white;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.4);
 }
 
 /* Contact detail styling đặc biệt */
@@ -456,54 +660,77 @@ textarea {
 
 .copyright-bar {
     background: #003d33;
-    padding: 15px 0;
-    text-align: center;
-    font-size: 0.9em;
     color: #ccc;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    margin-top: 30px;
+    letter-spacing: 0.5px;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
+    .top-bar {
+        padding: 20px 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .logo-area {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo-area img {
+        height: 80px;
+        width: 80px;
+        margin: 0;
+    }
+    
+    .school-identity {
+        text-align: center;
+    }
+    
+    .school-identity h1 { 
+        font-size: 1.6em;
+        margin-bottom: 5px;
+    }
+    
+    .school-identity p {
+        font-size: 1.1em;
+    }
+    
+    .menu { 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
     .form-section {
         flex-direction: column;
+        gap: 25px;
+    }
+    
+    .form-container {
+        padding: 25px 20px;
     }
     
     .form-row {
         flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 100%;
     }
     
     .hero h1 {
         font-size: 1.8em;
     }
     
-    .form-container {
-        padding: 20px;
-    }
-    
-    .top-bar {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .logo-area {
-        flex-direction: column;
-        margin-bottom: 10px;
-    }
-    
-    .logo-area img {
-        margin-right: 0;
-        margin-bottom: 10px;
-        height: 60px;
-        width: 60px;
-    }
-    
-    .school-identity h1 {
-        font-size: 1.5em;
-    }
-    
-    .footer-grid {
-        flex-direction: column;
-        gap: 20px;
+    .footer-grid { 
+        flex-direction: column; 
+        align-items: center;
     }
     
     .footer-col {
@@ -528,13 +755,29 @@ textarea {
         font-size: 0.8em;
     }
     
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
     .form-actions {
         flex-direction: column;
+    }
+    
+    .page-header {
+        padding: 40px 20px;
+        margin: 20px 0 30px 0;
+    }
+    
+    .page-title {
+        font-size: 2.2em;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .page-subtitle {
+        font-size: 1.1em;
+    }
+    
+    .breadcrumb {
+        padding: 10px 15px;
+        font-size: 0.8em;
+        margin: 20px 0 30px 0;
     }
 }
 
@@ -552,22 +795,14 @@ textarea {
         height: 70px;
         width: 70px;
     }
-}
-
-/* Thêm hiệu ứng animation cho header */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
+    
+    .page-title {
+        font-size: 1.8em;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .page-subtitle {
+        font-size: 1em;
     }
-}
-
-.logo-area {
-    animation: fadeInDown 1s ease-out;
 }
 
 /* Hiệu ứng hover cho toàn bộ logo area */
@@ -581,133 +816,4 @@ textarea {
     color: #c8e6c9;
     transform: translateX(5px);
     transition: all 0.3s ease;
-}
-
-/* === FORM UI UPGRADE === */
-
-/* Cải thiện layout form */
-.form-container {
-  flex: 2;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 40px 35px;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-.form-container:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-}
-
-/* Tiêu đề form */
-.form-header h2 {
-  font-size: 1.9em;
-  color: #004d40;
-  margin-bottom: 8px;
-}
-
-.form-header p {
-  color: #666;
-  font-size: 1.05em;
-}
-
-/* Nhóm form rõ ràng hơn */
-.form-group {
-  margin-bottom: 22px;
-}
-
-/* Ô input đẹp và thân thiện hơn */
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1.5px solid #ddd;
-  border-radius: 10px;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  background: #fafafa;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #009688;
-  background: #ffffff;
-  box-shadow: 0 0 6px rgba(0,150,136,0.2);
-}
-
-/* Placeholder nhạt hơn */
-input::placeholder,
-textarea::placeholder {
-  color: #aaa;
-  font-style: italic;
-}
-
-/* Nút hành động */
-.btn {
-  padding: 12px 25px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #00897b, #004d40);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #00bfa5, #00695c);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,150,136,0.3);
-}
-
-.btn-secondary {
-  background: #e0e0e0;
-  color: #333;
-}
-
-.btn-secondary:hover {
-  background: #ccc;
-}
-
-/* Phản hồi người dùng */
-.form-response {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.95em;
-  padding: 10px 15px;
-  border-radius: 8px;
-  display: none;
-}
-
-.form-response.success {
-  display: block;
-  background: #e8f5e9;
-  border: 1px solid #81c784;
-  color: #2e7d32;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .form-section {
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .form-container {
-    padding: 25px 20px;
-  }
-
-  .form-row {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .btn {
-    width: 100%;
-  }
 }
