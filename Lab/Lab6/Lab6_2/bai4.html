@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Web Nhúng Tiện Ích Mạng Xã Hội</title>
+  <link rel="stylesheet" href="css/bai4.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <h1>🌐 Trang Web Tích Hợp Tiện Ích</h1>
+    <p>Facebook • YouTube • Google Maps • Live Chat</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- FACEBOOK POST -->
+    <section class="widget fade-in">
+      <h2>📘 Bài Đăng Facebook</h2>
+      <p>Xem bài viết Facebook trực tiếp ngay trên trang web:</p>
+
+      <div class="embed-box fb-box">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FsinhvienITVietNam%2Fposts%2Fpfbid0U7Q8W8Bctxy8oqgVLW3SuexgfYBFA9cHcFK1ztmPn5UYXpjVqNScbbk1xrF6i2KEl&show_text=true&width=500" width="500" height="615" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+    </section>
+
+    <!-- YOUTUBE VIDEO -->
+    <section class="widget fade-in">
+      <h2>🎬 Video YouTube</h2>
+      <p>Giới thiệu hoạt động của trường qua video YouTube:</p>
+
+      <div class="embed-box video-box">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Gdf9exOs1lc?si=UrYLdTOIhOg88kzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- GOOGLE MAP -->
+    <section class="widget fade-in">
+      <h2>📍 Bản Đồ Google Map</h2>
+      <p>Vị trí Trường THPT Lương Thế Vinh trên bản đồ Google:</p>
+
+      <div class="embed-box map-box">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.782269687631!2d106.42589690983532!3d17.75489539204573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313898cf00000001%3A0x1a3b4f2bdbec2fb2!2zVHLGsOG7nW5nIFRIUFQgTMawxqFuZyBUaMOqzIEgVmluaCAtIFF14bqjbmcgQsOsbmg!5e0!3m2!1svi!2sus!4v1760317217535!5m2!1svi!2sus"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- LIVE CHAT -->
+    <section class="widget fade-in">
+      <h2>💬 Hộp Chat Messenger</h2>
+      <p>Khách truy cập có thể nhắn tin trực tiếp với trường qua Messenger:</p>
+
+      <div class="embed-box chat-box">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FsinhvienITVietNam%2Fposts%2Fpfbid0U7Q8W8Bctxy8oqgVLW3SuexgfYBFA9cHcFK1ztmPn5UYXpjVqNScbbk1xrF6i2KEl&show_text=true&width=500" width="500" height="615" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Trang Web Demo | Thiết kế bởi Nhóm Phát Triển Web</p>
+  </footer>
+
+  <!-- Hiệu ứng xuất hiện khi cuộn -->
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
