@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2 - Nút Like và Share</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v24.0&appId=2037043767138127"></script>
+
+    <header>
+        <h1>Nhúng Nút Like và Share</h1>
+    </header>
+
+    <main>
+        <h2>Facebook Like & Share Plugin</h2>
+        <p>Ví dụ hiển thị nút Like và Share cho một bài đăng cụ thể trên Facebook.</p>
+
+        <section>
+            <!-- Plugin Like chính -->
+            <div class="fb-like" data-href="https://www.facebook.com/ALW.anime/posts/pfbid02chBLj8eQekMxWgFAYk1X86ojnjngJhjgNU66kCeJ14a6wEkdogDsqaLp1UoRh7WFl" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
+
+            <!-- Fallback iframe (dự phòng hiển thị) -->
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FALW.anime%2Fposts%2Fpfbid02chBLj8eQekMxWgFAYk1X86ojnjngJhjgNU66kCeJ14a6wEkdogDsqaLp1UoRh7WFl&show_text=true&width=500" width="500" height="615" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 | LAB 13 – WEB1013
+    </footer>
+</body>
+</html>
