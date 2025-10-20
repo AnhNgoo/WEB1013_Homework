@@ -1227,3 +1227,17 @@ body {
     transform: rotate(5deg) scale(1.1);
     box-shadow: 0 8px 25px rgba(0,191,165,0.4), 0 0 20px rgba(255,255,255,0.3);
 }
+
+a {
+    text-decoration: none;
+}
+
+/* Hoặc nếu chỉ muốn bỏ gạch chân cho logo */
+.logo-area {
+    text-decoration: none;
+}
+
+/* Bỏ gạch chân khi hover */
+a:hover {
+    text-decoration: none;
+}

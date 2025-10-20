@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài 2 - Nút Like và Share</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <!-- Facebook SDK -->
-    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v24.0&appId=2037043767138127"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kết nối và Chia sẻ</title>
+    <link rel="stylesheet" href="css/Lab7_1_Bai2.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="info-section">
+        <h1 class="title">Kết Nối & Chia Sẻ</h1>
+        <p class="subtitle">
+          Cập nhật những thông tin mới nhất từ FPT Polytechnic Đà Nẵng và lan
+          tỏa đến cộng đồng của bạn.
+        </p>
+      </div>
 
-    <header>
-        <h1>Nhúng Nút Like và Share</h1>
-    </header>
-
-    <main>
-        <h2>Facebook Like & Share Plugin</h2>
-        <p>Ví dụ hiển thị nút Like và Share cho một bài đăng cụ thể trên Facebook.</p>
-
-        <section>
-            <!-- Plugin Like chính -->
-            <div class="fb-like" data-href="https://www.facebook.com/ALW.anime/posts/pfbid02chBLj8eQekMxWgFAYk1X86ojnjngJhjgNU66kCeJ14a6wEkdogDsqaLp1UoRh7WFl" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
-
-            <!-- Fallback iframe (dự phòng hiển thị) -->
-            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FALW.anime%2Fposts%2Fpfbid02chBLj8eQekMxWgFAYk1X86ojnjngJhjgNU66kCeJ14a6wEkdogDsqaLp1UoRh7WFl&show_text=true&width=500" width="500" height="615" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        </section>
+      <div class="social-card">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpolydn%2Fposts%2Fpfbid02pAbgmQ5pF5Athxv8CBJeUfXwC9fUD4pSEDqdpbVpLw4xLFrRymmvXKn1VSNwC1oWl&show_text=true&width=550"
+          width="550"
+          height="800"
+          style="border: none; overflow: visible;"
+          scrolling="no"
+          frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
+        <div class="social-buttons">
+          <div
+            class="fb-like"
+            data-href="https://www.facebook.com/polydn"
+            data-width=""
+            data-layout="button_count"
+            data-action="like"
+            data-size="large"
+            data-share="true"
+          ></div>
+        </div>
+      </div>
     </main>
 
-    <footer>
-        © 2025 | LAB 13 – WEB1013
-    </footer>
-</body>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v20.0&appId=YOUR_APP_ID"
+      nonce="YourNonce"
+    ></script>
+  </body>
 </html>

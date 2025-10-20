@@ -1,0 +1,265 @@
+/* Reset và Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animated Background Layers */
+.vortex-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.layer-1 {
+    background: radial-gradient(circle at 25% 25%, #ff6b6b 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #4ecdc4 0%, transparent 50%);
+    animation: rotate 20s linear infinite;
+}
+
+.layer-2 {
+    background: radial-gradient(circle at 75% 25%, #45b7d1 0%, transparent 50%),
+                radial-gradient(circle at 25% 75%, #f9ca24 0%, transparent 50%);
+    animation: rotate 30s linear infinite reverse;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Main Container */
+.video-showcase {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Page Header */
+.page-intro {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: slideInDown 1s ease-out;
+}
+
+.page-intro h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #e3f2fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.page-intro p {
+    font-size: 1.2em;
+    color: #e3f2fd;
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Video Player Card */
+.video-player-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.1),
+        0 5px 15px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 40px;
+    animation: slideInUp 1s ease-out 0.3s both;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-player-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+}
+
+/* Video Responsive Container */
+.video-responsive {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin-bottom: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+/* Video Details */
+.video-details h2 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.channel-info {
+    color: #7f8c8d;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* Interaction Section */
+.interaction-section {
+    text-align: center;
+    animation: slideInUp 1s ease-out 0.6s both;
+}
+
+.cta-button {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:not(.alt) {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.cta-button.alt {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+}
+
+.cta-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+.cta-button.alt:hover {
+    box-shadow: 0 15px 40px rgba(240, 147, 251, 0.6);
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-showcase {
+        padding: 20px 15px;
+    }
+    
+    .page-intro h1 {
+        font-size: 2.5em;
+        letter-spacing: 1px;
+    }
+    
+    .page-intro p {
+        font-size: 1.1em;
+    }
+    
+    .video-player-card {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .cta-button {
+        display: block;
+        margin: 10px auto;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-intro h1 {
+        font-size: 2em;
+    }
+    
+    .video-player-card {
+        padding: 15px;
+    }
+    
+    .video-details h2 {
+        font-size: 1.5em;
+    }
+}

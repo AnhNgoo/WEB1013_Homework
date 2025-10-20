@@ -1,0 +1,351 @@
+/* Reset và Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4267B2 0%, #1877f2 25%, #42a5f5 50%, #1e88e5 75%, #1565c0 100%);
+    background-size: 400% 400%;
+    animation: gradientWave 12s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated Background */
+@keyframes gradientWave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Elements */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    z-index: -1;
+    animation: floatAround 25s infinite linear;
+}
+
+body::before {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+body::after {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    right: 15%;
+    animation-delay: -12s;
+}
+
+@keyframes floatAround {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(30px, -30px) rotate(90deg); }
+    50% { transform: translate(-20px, -60px) rotate(180deg); }
+    75% { transform: translate(-50px, -30px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    width: 100%;
+    animation: containerFadeIn 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Info Section */
+.info-section {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: slideDown 1s ease-out 0.2s both;
+}
+
+.title {
+    font-size: 3.2em;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #e3f2fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: #e3f2fd;
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Social Card */
+.social-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.15),
+        0 10px 25px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+    position: relative;
+    overflow: visible;
+    animation: slideUp 1s ease-out 0.4s both;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #4267B2, #1877f2, #42a5f5);
+    border-radius: 25px 25px 0 0;
+}
+
+.social-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 35px 70px rgba(24, 119, 242, 0.2),
+        0 15px 35px rgba(24, 119, 242, 0.15);
+}
+
+/* Facebook Post Styling */
+.social-card iframe {
+    width: 100% !important;
+    min-width: 500px !important;
+    max-width: 600px !important;
+    height: auto !important;
+    min-height: 600px !important;
+    border-radius: 15px;
+    overflow: visible;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-card iframe:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 40px rgba(24, 119, 242, 0.2);
+}
+
+/* Social Buttons Section */
+.social-buttons {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, 
+        rgba(66, 103, 178, 0.1) 0%, 
+        rgba(24, 119, 242, 0.1) 100%);
+    border-radius: 15px;
+    border: 2px solid rgba(24, 119, 242, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-buttons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.2), 
+        transparent);
+    transition: left 0.8s ease;
+}
+
+.social-buttons:hover::before {
+    left: 100%;
+}
+
+/* Facebook Like Button Wrapper */
+.fb-like {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.fb-like:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Facebook Elements */
+.fb-like span,
+.fb-like iframe {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+/* Loading Placeholder for Facebook Content */
+.social-card::after {
+    content: "Đang tải nội dung Facebook...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #4267B2;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Animations */
+@keyframes containerFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    .title {
+        font-size: 2.5em;
+        letter-spacing: 1px;
+    }
+    
+    .subtitle {
+        font-size: 1.2em;
+    }
+    
+    .social-card {
+        padding: 25px;
+        border-radius: 20px;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    
+    .social-card iframe {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        min-height: 500px !important;
+        width: 100% !important;
+    }
+    
+    .info-section {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.2em;
+        line-height: 1.2;
+    }
+    
+    .subtitle {
+        font-size: 1.1em;
+    }
+    
+    .social-card {
+        padding: 20px;
+        border-radius: 18px;
+        margin: 0 5px;
+    }
+    
+    .social-card iframe {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        min-height: 450px !important;
+        width: 100% !important;
+    }
+    
+    .social-buttons {
+        padding: 15px;
+    }
+}
+
+/* Dark mode support for Facebook elements */
+@media (prefers-color-scheme: dark) {
+    .social-card {
+        background: rgba(30, 30, 30, 0.95);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .social-buttons {
+        background: linear-gradient(135deg, 
+            rgba(66, 103, 178, 0.2) 0%, 
+            rgba(24, 119, 242, 0.2) 100%);
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .social-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
